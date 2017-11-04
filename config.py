@@ -1,0 +1,3 @@
+BAHN_BOT_NAME = "testbot"
+BAHN_BOT_PW = "MXB8k"
+BAHN_NAME = "RE7"
