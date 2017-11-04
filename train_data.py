@@ -9,7 +9,6 @@ def travel_data(origin_id="556660846", destination_id="000006620", date_info="20
     stops_list = json_data["Trip"][0]["LegList"]["Leg"][0]["Stops"]["Stop"]
 
     for stop in stops_list[1:]:
-        print(stop.get("name"), " ".join([stop.get("arrDate"), stop.get("arrTime")]))
         stopdatetime = datetime.strptime(" ".join([stop.get("arrDate"), stop.get("arrTime")]), '%Y-%m-%d %H:%M:%S')
         if stopdatetime > datetime.now():
             train_name = json_data["Trip"][0]["LegList"]["Leg"][0]["Product"].get("name").strip()
