@@ -31,14 +31,21 @@ def announce_event(event):
                              channel=config.ANNOUNCE_CHANNEL, alias='RE7').json()
 
 
+def react_to_msg():
+
+    print(rocket.im_list(channel=config.ANNOUNCE_CHANNEL, alias='RE7'))
 if __name__ == '__main__':
-    pprint(rocket.channels_list().json())
-    next_stop = Event(0, "Nächster Halt: Solingen Hbf 🚉")
-    tunnel = Event(
-        0, "Wir fahren gleich in einen Tunnel. Nicht erschrecken. 🚇 👻")
-    wait = Event(-1, "Ein Zug vor uns verzögert unsere Weiterfahrt. 👀")
-    announce_event(tunnel)
-    time.sleep(60)
-    announce_event(wait)
-    time.sleep(360)
-    announce_event(next_stop)
+    react_to_msg()
+    # pprint(rocket.channels_list().json())
+    # next_stop = Event(0, "Nächster Halt: Solingen Hbf 🚉")
+    # tunnel = Event(
+    #     0, "Wir fahren gleich in einen Tunnel. Nicht erschrecken. 🚇 👻")
+    # wait = Event(-1, "Ein Zug vor uns verzögert unsere Weiterfahrt. 👀")
+    # resume = Event(1, "Weiter gehts! ")
+    # announce_event(tunnel)
+    # time.sleep(10)
+    # announce_event(wait)
+    # time.sleep(10)
+    # announce_event(resume)
+    # time.sleep(10)
+    # announce_event(next_stop)
