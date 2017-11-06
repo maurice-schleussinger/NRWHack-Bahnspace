@@ -11,7 +11,7 @@ rocket = RocketChat(config.BAHN_BOT_NAME, config.BAHN_BOT_PW,
 
 
 def channel_messages(rocket, channel_name):
-    json_result = rocket.channels_history(channel_name).json()
+    json_result = rocket.channels_history(channel_name, count=100).json()
     return json_result
 
 

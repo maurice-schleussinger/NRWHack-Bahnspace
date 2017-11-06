@@ -1,8 +1,10 @@
 import requests
 from datetime import datetime
 
-def delay(station_id, product_id, train_number, train_name)
-    DEPARTURE_URL = "http://demo.hafas.de/avv-aachen/restproxy/departureBoard?id=L={}&accessId=avv&products={}&format=json".format(station_id, product_id)
+
+def delay(station_id, product_id, train_number, train_name):
+    DEPARTURE_URL = "http://demo.hafas.de/avv-aachen/restproxy/departureBoard?id=L={}&accessId=avv&products={}&format=json".format(
+        station_id, product_id)
 
     result = requests.get(DEPARTURE_URL)
 
@@ -21,10 +23,14 @@ def delay(station_id, product_id, train_number, train_name)
         rt_data = ' '.join([rt_date, rt_time])
         planned_data = ' '.join([planned_date, planned_time])
         rt_data_dt = datetime.strptime(rt_data, '%Y-%m-%d %H:%M:%S')
-        planned_data_dt = datetime.strptime(planned_data, '%Y-%m-%d %H:%M:%S')
+        planned_data_dt = datetime.strptime(
+            planned_data, '%Y-%m-%d %H:%M:%S')
         delay = rt_data_dt - planned_data_dt
         delay_seconds = delay.seconds
     else:
         delay_seconds = 0
 
     return delay_seconds
+
+if __name__ == '__main__':
+    print(delay("6642", "7", "10429", "RE4"))
