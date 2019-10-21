@@ -3,7 +3,7 @@ chardet==3.0.4
 falcon==1.3.0
 hug==2.3.2
 idna==2.6
-nltk==3.2.5
+nltk==3.4.5
 python-mimeparse==1.6.0
 requests==2.18.4
 rocketchat-API==0.6.3
