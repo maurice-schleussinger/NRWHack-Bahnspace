@@ -10,4 +10,4 @@ rocketchat-API==0.6.3
 six==1.11.0
 textblob==0.13.0
 textblob-de==0.4.2
-urllib3==1.22
+urllib3==1.26.5
